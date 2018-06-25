@@ -1,0 +1,13 @@
+.button {
+    margin: 20px 0 25px 0;
+}
+
+.card {
+    margin: 10px;
+    text-align: center;
+}
+
+.option {
+    display: block;
+    width: 40%;
+}

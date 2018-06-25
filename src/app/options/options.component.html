@@ -1,0 +1,14 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>Add your options and then press the button to make a decision</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="option" *ngFor="let option of options; let i = index">
+            <input matInput placeholder="Option {{i + 1}}" [(ngModel)]="option.option" (change)="reset()"/>
+        </mat-form-field>
+
+        <div class="button">
+            <button mat-raised-button color="primary" (click)="onClick()" [disabled]="!isValid()">Make a decision</button>
+        </div>
+    </mat-card-content>
+</mat-card>
