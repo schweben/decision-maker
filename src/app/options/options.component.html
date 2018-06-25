@@ -4,7 +4,11 @@
     </mat-card-header>
     <mat-card-content>
         <mat-form-field class="option" *ngFor="let option of options; let i = index">
-            <input matInput placeholder="Option {{i + 1}}" [(ngModel)]="option.option" (change)="reset()"/>
+            <input matInput placeholder="Option {{i + 1}}" [(ngModel)]="option.option" (change)="reset()">
+
+            <mat-icon *ngIf="i === (options.length - 1)" matSuffix (click)="addOption()">add_box</mat-icon>
+
+            <mat-icon *ngIf="i > 0" matSuffix (click)="deleteOption(i)">delete</mat-icon>
         </mat-form-field>
 
         <div class="button">

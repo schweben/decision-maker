@@ -58,7 +58,22 @@ export class OptionsComponent implements OnInit, OnDestroy {
         this.resultService.setResult(null);
     }
 
+    public addOption(): void {
+        this.options.push({
+            option: '',
+            score: 0,
+        });
+    }
+
+    public deleteOption(optionIndex: number): void {
+        this.options.splice(optionIndex, 1);
+    }
+
     public isValid(): boolean {
+        if (this.options.length < 2) {
+            return false;
+        }
+
         let valid = true;
         this.options.forEach((option) => {
             if (!option.option) {
