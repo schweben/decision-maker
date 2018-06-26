@@ -54,7 +54,7 @@ export class OptionsComponent implements OnInit, OnDestroy {
         });
     }
 
-    public reset(): void {
+    public resetResult(): void {
         this.resultService.setResult(null);
     }
 
@@ -63,10 +63,12 @@ export class OptionsComponent implements OnInit, OnDestroy {
             option: '',
             score: 0,
         });
+        this.resetResult();
     }
 
     public deleteOption(optionIndex: number): void {
         this.options.splice(optionIndex, 1);
+        this.resetResult();
     }
 
     public isValid(): boolean {

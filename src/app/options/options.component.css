@@ -7,11 +7,10 @@
     text-align: center;
 }
 
-.option {
-    display: block;
-    width: 40%;
-}
-
 .material-icons {
     cursor: pointer;
+}
+
+.option {
+    display: block;
 }
