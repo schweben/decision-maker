@@ -8,11 +8,9 @@ import { Option } from './option';
     templateUrl: './options.component.html',
     styleUrls: [ './options.component.css' ],
 })
-export class OptionsComponent implements OnInit, OnDestroy {
+export class OptionsComponent implements OnInit {
 
     public options: Option[] = [];
-
-    private resultSubscription: Subscription;
 
     constructor(private resultService: ResultService) {
     }
@@ -26,10 +24,6 @@ export class OptionsComponent implements OnInit, OnDestroy {
             option: '',
             score: 0,
         };
-    }
-
-    public ngOnDestroy() {
-        this.resultSubscription.unsubscribe();
     }
 
     public onClick(): void {
@@ -84,6 +78,7 @@ export class OptionsComponent implements OnInit, OnDestroy {
         });
         return valid;
     }
+
     private getRandomScore(): number {
         return Math.floor(Math.random() * 1000);
     }
