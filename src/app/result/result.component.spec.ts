@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import 'rxjs/add/observable/of';
-import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs';
 
 import { MaterialModule } from '../material.module';
 import { ResultService } from '../service/result.service';
@@ -31,7 +30,7 @@ describe('ResultComponent', () => {
     }));
 
     beforeEach(() => {
-        spyOn(resultService, 'getResult').and.returnValue(Observable.of({
+        spyOn(resultService, 'getResult').and.returnValue(of({
             option: 'Test',
             score: 42,
         }));
