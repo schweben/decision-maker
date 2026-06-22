@@ -26,7 +26,7 @@ export default function Options() {
 	}
 
 	function makeDecision(): void {
-		setDecision(options[Math.floor(Math.random() * (options.length))]);
+		setDecision(options[Math.floor(Math.random() * options.length)]);
 	}
 
 	function addButtonDisabled(): boolean {
